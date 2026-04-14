@@ -1,0 +1,7 @@
+services:
+  ukdashboard:
+    build: .
+    container_name: ukdashboard
+    ports:
+      - "3000:80"
+    restart: unless-stopped
