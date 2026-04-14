@@ -6,6 +6,7 @@ import CrimePanel from './components/CrimePanel';
 import EconomyPanel from './components/EconomyPanel';
 import NHSPanel from './components/NHSPanel';
 import HousingPanel from './components/HousingPanel';
+import MortalityPanel from './components/MortalityPanel';
 import './App.css';
 
 export default function App() {
@@ -21,6 +22,7 @@ export default function App() {
         {activeTab === 'Economy' && <EconomyPanel />}
         {activeTab === 'NHS' && <NHSPanel />}
         {activeTab === 'Housing' && <HousingPanel />}
+        {activeTab === 'Mortality' && <MortalityPanel />}
       </main>
       <footer className="footer">
         <p>
