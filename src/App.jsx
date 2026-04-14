@@ -3,6 +3,8 @@ import Header from './components/Header';
 import OverviewPanel from './components/OverviewPanel';
 import ImmigrationPanel from './components/ImmigrationPanel';
 import CrimePanel from './components/CrimePanel';
+import EconomyPanel from './components/EconomyPanel';
+import NHSPanel from './components/NHSPanel';
 import './App.css';
 
 export default function App() {
@@ -15,6 +17,8 @@ export default function App() {
         {activeTab === 'Overview' && <OverviewPanel onTabChange={setActiveTab} />}
         {activeTab === 'Immigration' && <ImmigrationPanel />}
         {activeTab === 'Crime' && <CrimePanel />}
+        {activeTab === 'Economy' && <EconomyPanel />}
+        {activeTab === 'NHS' && <NHSPanel />}
       </main>
       <footer className="footer">
         <p>

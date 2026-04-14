@@ -191,6 +191,13 @@
   margin: 0 0 12px;
 }
 
+.overview-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
 .overview-actions {
   display: flex;
   gap: 12px;
@@ -214,6 +221,11 @@
   background: var(--accent);
   border-color: var(--accent);
   color: #fff;
+}
+
+.action-btn--small {
+  padding: 5px 12px;
+  font-size: 12px;
 }
 
 /* ── Footer ── */

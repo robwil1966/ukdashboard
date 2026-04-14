@@ -1,10 +1,14 @@
 import StatCard from './StatCard';
 import { keyStats as immigrationStats } from '../data/immigration';
 import { keyStats as crimeStats } from '../data/crime';
+import { keyStats as economyStats } from '../data/economy';
+import { keyStats as nhsStats } from '../data/nhs';
 
-const overviewCards = [
-  ...immigrationStats.map(s => ({ ...s, section: 'Immigration' })),
-  ...crimeStats.map(s => ({ ...s, section: 'Crime' })),
+const sections = [
+  { title: 'Economy', stats: economyStats, tab: 'Economy' },
+  { title: 'Immigration', stats: immigrationStats, tab: 'Immigration' },
+  { title: 'Crime', stats: crimeStats, tab: 'Crime' },
+  { title: 'NHS', stats: nhsStats, tab: 'NHS' },
 ];
 
 export default function OverviewPanel({ onTabChange }) {
@@ -12,7 +16,7 @@ export default function OverviewPanel({ onTabChange }) {
     <div className="panel">
       <div className="panel-header">
         <h2>Overview</h2>
-        <span className="source-badge">ONS · Home Office · Latest available data</span>
+        <span className="source-badge">ONS · Home Office · NHS England · BoE · Latest available data</span>
       </div>
 
       <p className="overview-intro">
@@ -20,24 +24,19 @@ export default function OverviewPanel({ onTabChange }) {
         detailed charts for each topic.
       </p>
 
-      <h3 className="section-heading">Immigration</h3>
-      <div className="stat-grid">
-        {immigrationStats.map(s => <StatCard key={s.label} {...s} />)}
-      </div>
-
-      <h3 className="section-heading">Crime</h3>
-      <div className="stat-grid">
-        {crimeStats.map(s => <StatCard key={s.label} {...s} />)}
-      </div>
-
-      <div className="overview-actions">
-        <button className="action-btn" onClick={() => onTabChange('Immigration')}>
-          Explore Immigration →
-        </button>
-        <button className="action-btn" onClick={() => onTabChange('Crime')}>
-          Explore Crime →
-        </button>
-      </div>
+      {sections.map(({ title, stats, tab }) => (
+        <div key={title}>
+          <div className="overview-section-header">
+            <h3 className="section-heading">{title}</h3>
+            <button className="action-btn action-btn--small" onClick={() => onTabChange(tab)}>
+              Explore →
+            </button>
+          </div>
+          <div className="stat-grid">
+            {stats.map(s => <StatCard key={s.label} {...s} />)}
+          </div>
+        </div>
+      ))}
     </div>
   );
 }
