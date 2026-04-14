@@ -1,5 +1,5 @@
 export default function Header({ activeTab, onTabChange }) {
-  const tabs = ['Overview', 'Immigration', 'Crime', 'Economy', 'NHS', 'Housing', 'Mortality', 'Demographics'];
+  const tabs = ['Overview', 'Immigration', 'Crime', 'Economy', 'NHS', 'Housing', 'Mortality', 'Demographics', 'Poverty'];
 
   return (
     <header className="header">

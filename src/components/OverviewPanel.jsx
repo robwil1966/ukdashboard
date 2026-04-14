@@ -6,6 +6,7 @@ import { keyStats as nhsStats } from '../data/nhs';
 import { keyStats as housingStats } from '../data/housing';
 import { keyStats as mortalityStats } from '../data/mortality';
 import { keyStats as demographicsStats } from '../data/demographics';
+import { keyStats as povertyStats } from '../data/poverty';
 
 const sections = [
   { title: 'Economy', stats: economyStats, tab: 'Economy' },
@@ -15,6 +16,7 @@ const sections = [
   { title: 'Housing', stats: housingStats, tab: 'Housing' },
   { title: 'Mortality', stats: mortalityStats, tab: 'Mortality' },
   { title: 'Demographics', stats: demographicsStats, tab: 'Demographics' },
+  { title: 'Poverty & Welfare', stats: povertyStats, tab: 'Poverty' },
 ];
 
 export default function OverviewPanel({ onTabChange }) {
